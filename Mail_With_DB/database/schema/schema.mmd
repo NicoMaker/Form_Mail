@@ -1,0 +1,22 @@
+erDiagram
+  utenti ||--o{ email_inviate : "riceve"
+  utenti {
+    INTEGER id PK
+    TEXT nome
+    TEXT cognome
+    TEXT indirizzo
+    TEXT codice_fiscale
+    TEXT data_nascita
+    TEXT comune
+    TEXT provincia
+    TEXT telefono
+    TEXT email
+    TIMESTAMP data_registrazione
+  }
+  email_inviate {
+    INTEGER id PK
+    INTEGER utente_id FK
+    TEXT oggetto
+    TEXT contenuto
+    TIMESTAMP data_invio
+  }
